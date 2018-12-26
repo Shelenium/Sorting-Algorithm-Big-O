@@ -1,0 +1,322 @@
+  /*      -----------------------fonts --------------------------*/
+
+@font-face {
+  font-family: Gotham SSm;
+  src: url('GothamSSm/GothamSSm-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham SSm;
+  src: url('GothamSSm/GothamSSm-Book.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham SSm;
+  src: url('GothamSSm/GothamSSm-Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham SSm;
+  src: url('GothamSSm/GothamSSm-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+  
+  /*      -----------------------main --------------------------*/
+
+html {
+  transition: all 0.3s ease-out;
+  min-height: 100%;
+}
+
+body {
+  font-size: calc(4px + (9 - 4) * ((100vw - 300px) / (1600 - 300)));
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  position: relative;
+  background:
+  radial-gradient(
+    100vw 30vw at top,
+    #ffcf5d, 
+    #1b0b02 70%
+  ),
+  repeating-linear-gradient(
+    to left,
+    white 0,
+    white 1em,
+    wheat 0.8em,
+    wheat 0.5em,
+    beige 0.5em,
+    beige 1.5em
+  );
+
+background-blend-mode: multiply;
+
+}
+
+h1 {
+	font: 700 5em/6em 'Gotham SSm', sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+.picture__container {
+  display: none;
+  background: center center/cover url("../images/everest-header.jpg");
+  height: 50vw;
+  width: 100%;
+  z-index:-5;
+}
+
+.snow__container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+}
+
+.sorting-algorithm-list {
+  margin: 0 auto 50px;
+  max-width: 1200px;
+
+}
+
+.balls__container {
+  min-height: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  background: center -60px url("../images/up2.png") repeat-x;
+}
+
+.ball__container {
+  animation:
+    fall 2s ease-out 1;
+  -webkit-animation:
+    fall 2s ease-out 1;
+  -moz-animation:
+    fall 2s ease-out 1;
+}
+
+.hover-animation__container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; 
+}
+
+.hover-animation__container:active {
+  transform-origin: top center;
+  animation:
+    jump 2s ease-out;
+  -webkit-animation:
+    jump 2s ease-out;
+  -moz-animation:
+    jump 2s ease-out;
+}
+
+.ball__ring {
+  height: 1.2vw;
+  width: 4%;
+  background-color: ##c03636;
+  border: 3px solid  #f99d24;
+  border-radius: 45%;
+}
+
+.ball__string {
+  width: 0.25vw;
+  height: 10vw;
+  background-color: #f99d24;
+}
+
+.ball__button {
+  height: 1vw;
+  width: 2vw;
+  background-color: #f99d24;
+  border-radius: 1vw;
+}
+
+
+.__ball {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 5vw;
+  position: relative;
+  filter: contrast(125%) brightness(103%) sepia(20%);
+}
+
+.__ball:before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 1vw;
+  background: radial-gradient(circle at 70% 0px, #ffffff, rgba(255, 255, 255, 0) 90%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+
+.__ball:after {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 5vw;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0), rgba(190, 80, 0, 0.2) 50%, #000000 90%);
+}
+
+.__row {
+  font: 400 3em/2em 'Gotham SSm', sans-serif;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+.__header {
+  font: 500 2em/4em 'Gotham SSm', sans-serif;
+  border-bottom: solid 1px white;
+}
+
+.sorting-algorithm-list .__item {
+  width: 18%;
+}
+
+.sorting-algorithm-list .__item:first-child{
+  width: 24%;
+}
+
+.sorting-algorithm-list .__item:last-child{
+  width: 14%;
+}
+
+.slow {
+  color: #FE001E;
+}
+
+.fast {
+  color: #1CCB00;
+}
+
+.fair {
+  color: #FF9500;
+}
+
+.algorithm__name i {
+  margin-left: 1vw;
+  color: #005CEE;
+}
+
+.algorithm__name,
+.algorithm__name a {
+  color: #1268F0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.algorithm__name a:hover,
+.algorithm__name i:hover {
+  color: gray;
+}
+
+#snowTime i:hover {
+  color: white;
+}
+
+@keyframes fall {
+
+    0% { transform: translateY(-400px); }
+    70% { transform: translateY(40px); }
+    100% { transform: translateY(0); }
+
+}
+
+@-webkit-keyframes fall {
+
+    0% { -webkit-transform: translateY(-400px); }
+    70% { -webkit-transform: translateY(40px); }
+    100% {  -webkit-transform: translateY(0); }
+
+}
+
+@-moz-keyframes fall {
+
+    0% { -moz-transform: translateY(-400px) rotate(0.01deg); }
+    70% { -moz-transform: translateY(40px) rotate(0.01deg); }
+    100% { -moz-transform: translateY(0) rotate(0.01deg); }
+
+}
+
+@keyframes jump {
+
+    0% { transform: translateY(-15px); }
+    70% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+
+}
+
+@-webkit-keyframes jump {
+
+    0% { -webkit-transform: translateY(-15px); }
+    70% { -webkit-transform: translateY(10px); }
+    100% {  -webkit-transform: translateY(0); }
+
+}
+
+@-moz-keyframes jump {
+
+    0% { -moz-transform: translateY(-15px) rotate(0.01deg); }
+    70% { -moz-transform: translateY(10px) rotate(0.01deg); }
+    100% { -moz-transform: translateY(0) rotate(0.01deg); }
+
+}
+
+
+@-moz-keyframes rotate {
+
+    0% { -moz-transform: rotate(-7deg); }
+    20% { -moz-transform: rotate(10deg); }
+    40% { -moz-transform: rotate(-7deg); }
+    60% { -moz-transform: rotate(5deg); }
+    80% { -moz-transform: rotate(-2deg); }
+    100% { -moz-transform: rotate(0deg); }
+
+}
+
+@keyframes rotate {
+
+    0% { transform: rotate(-7deg); }
+    20% { transform: rotate(10deg); }
+    40% { transform: rotate(-7deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+
+}
+
+@-webkit-keyframes rotate {
+
+    0% { -webkit-transform: rotate(-7deg); }
+    20% { -webkit-transform: rotate(10deg); }
+    40% {  -webkit-transform: rotate(-7deg); }
+    60% { -webkit-transform: rotate(5deg); }
+    80% { -webkit-transform: rotate(-2deg); }
+    100% {  -webkit-transform: rotate(0deg); }
+
+}
+
+
+
