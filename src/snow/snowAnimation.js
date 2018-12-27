@@ -73,20 +73,22 @@ export default class SnowAnimation {
     }
 
     // playback control: play, pause, toggle
-    start() {
+    start(handler) {
         if (this.isRunning) return;
         this.animationCallback = this.getRequestAnimationFrame(this.frameRenderCore);
+        window.addEventListener('resize', handler);
         this.isRunning = true;
     }
 
-    stop() {
+    stop(handler) {
         if (!this.isRunning) return;
         clearInterval(this.animationCallback);
+        window.removeEventListener('resize', handler);
         this.isRunning = false;
     }
 
-    toggle() {
+    toggle(handler) {
         let playbackControl = (this.isRunning) ? this.stop : this.start;
-        playbackControl();
+        playbackControl(handler);
     }
 }
