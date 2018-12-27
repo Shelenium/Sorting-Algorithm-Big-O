@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-size: calc(4px + (9 - 4) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(4px + (7.5 - 4) * ((100vw - 400px) / (1600 - 400)));
   min-height: 100%;
   margin: 0;
   padding: 0;
