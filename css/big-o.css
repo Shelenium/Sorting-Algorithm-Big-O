@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-size: calc(4px + (7 - 4) * ((100vw - 400px) / (960 - 400)));
+  font-size: calc(4px + (8 - 4) * ((100vw - 400px) / (960 - 400)));
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -62,6 +62,12 @@ body {
 
 background-blend-mode: multiply;
 
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 8px;
+  }
 }
 
 h1 {
@@ -177,6 +183,19 @@ h1 {
   background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0), rgba(190, 80, 0, 0.2) 50%, #000000 90%);
 }
 
+.wish-container {
+  font: 400 2.5em/2em 'Gotham SSm', sans-serif;
+  min-height: 20px;
+  text-align: center;
+  color: white;
+  margin: 15px auto;
+  width: 60%;
+}
+
+.personWish {
+  min-height: 300px;
+}
+
 .__row {
   font: 400 2.5em/2em 'Gotham SSm', sans-serif;
   display: flex;
@@ -187,7 +206,7 @@ h1 {
 }
 
 .__header {
-  font: 500 1.5em/4em 'Gotham SSm', sans-serif;
+  font: 500 1.8em/4em 'Gotham SSm', sans-serif;
   border-bottom: solid 1px white;
 }
 
